@@ -1,0 +1,9 @@
+// Trim Method 
+ class Trim{
+     public static void main(String args[]){
+      String str = "     This isaman";
+     System.out.println("Trim only Starting Space  : "+ str.trim());
+    System.out.println(str);
+ }
+}
+   
