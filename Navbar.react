@@ -1,0 +1,674 @@
+App.jsx
+
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Home from "./Component/Home";
+import About from "./Component/About";
+import Insert from "./Component/Insert";
+import Display from "./Component/Display";
+import Update from "./Component/Update";
+import RecEdit from "./Component/RecEdit";
+import Search from "./Component/Search";
+import Layout from "./Layout";
+
+const App=()=>{
+    return(
+        <>
+        <BrowserRouter>
+            <Routes>
+                <Route path="/" element={<Layout></Layout>}>
+                   <Route index element={<Home></Home>}></Route>
+                   <Route path="home" element={<Home></Home>}></Route>
+                   <Route path="about" element={<About></About>}></Route>
+                   <Route path="insert" element={<Insert></Insert>}></Route>
+                   <Route path="display" element={<Display></Display>}></Route>
+                   <Route path="update" element={<Update></Update>}></Route>
+                   <Route path="search" element={<Search></Search>}></Route>
+                   <Route path="recedit" element={<RecEdit></RecEdit>}></Route>
+                </Route>
+            </Routes>
+        </BrowserRouter>
+        
+        </>
+    )
+}
+export default App;
+
+*/
+
+
+
+
+/*import { BrowserRouter, Routes ,Route} from "react-router-dom";
+import Layout from "./Layout";
+import Home from "./Component/Home";
+import About from "./Component/About";
+import Contact from "./Component/Contact";
+import Insert from "./Component/Insert";
+import Display from "./Component/Display";
+import Search from "./Component/Search";
+import RecEdit from "./Component/RecEdit";
+import Update from "./Component/Update";
+
+const App=()=>{
+    return(
+        <>
+        <BrowserRouter>
+        <Routes>
+            <Route path="/" element={<Layout></Layout>}>
+            <Route index element={<Home></Home>}></Route>
+               <Route path="home" element={<Home></Home>}></Route>
+               <Route path="about" element={<About></About>}></Route>
+               <Route path="contact" element={<Contact></Contact>}></Route>
+               <Route path="insert" element={<Insert></Insert>}></Route>
+               <Route path="display" element={<Display></Display>}></Route>
+               <Route path="update" element={<Update></Update>}></Route>
+               <Route path="search" element={<Search></Search>}></Route>
+               <Route path="myedit/:id" element={<RecEdit/>}></Route>
+            </Route>
+        </Routes>
+        </BrowserRouter>
+        </>
+    )
+}
+export default App;
+*/
+
+/*
+const App=()=>{
+    return(
+        <>
+        <div style={{backgroundColor:"yellow" ,height:"600px",padding:"95px", border:"10px" ,borderRadius:"900px"}}>
+            <div style={{backgroundColor:"blue" ,height:"400px",padding:"80px", border:"40px",borderColor:"black"}}>
+                <div style={{backgroundColor:"red" ,height:"200px",width:"800px",padding:"60px",alignItems:"center", fontSize:"50px",borderRadius:"50%" }}><h1 style={{marginLeft:"300px"}}>Cybrom</h1></div>
+            </div>
+        </div>
+        </>
+    )
+}
+
+export default App;
+*/
+/*
+import { useState } from "react";
+
+const App=()=>{
+    const [color,setcolor] = useState("red");
+
+    return(
+        <>
+         <h1 style={{backgroundColor:color}}>THis Program a change a Color </h1>
+         <button onClick={()=>{setcolor("blue")}}>BLue</button>
+         <button onClick={()=>{setcolor("pink")}}>pink</button>
+         <button onClick={()=>{setcolor("yellow")}}>Yellow</button>
+         <button onClick={()=>{setcolor("orange")}}>Orange</button>
+        </>
+    )
+}
+export default App;
+*/
+
+
+/*
+import { useState } from "react";
+
+const App=()=>{
+   const [name, setname] = useState("AMan")
+   const  change=()=>{
+       setname("Gaurav")
+   }
+   return(
+    <>
+    <h1>My name is {name}</h1>
+    <button onClick={change}>Change name</button>
+    </>
+
+
+   )
+}
+export default App;
+*/
+
+
+
+
+
+/*
+import { useState } from "react";
+
+const App=()=>{
+    const [cnt ,setcnt] = useState(0)
+    const dec=()=>{
+        if(cnt<=0){
+            alert("Not got to the negative number ")
+
+        }
+        else{
+            setcnt(cnt-1)
+        }
+    }
+    return(
+        <>
+        <h1>This is  Ccount porgram </h1>
+        <h1>Count = {cnt}</h1>
+        <button onClick={()=>{setcnt(cnt+1)}}> Increment</button>
+        <button onClick={()=>{setcnt(0)}}>Zero</button>
+        <button onClick={dec}>Decrement</button>
+        </>
+    )
+}
+export default App;
+
+*/
+===================
+Layout.jsx
+
+import { Link, Outlet } from "react-router-dom";
+import Container from 'react-bootstrap/Container';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
+const Layout=()=>{
+    return(
+        <>
+         <Navbar bg="dark" data-bs-theme="dark">
+        <Container>
+          <Navbar.Brand href="#home">Navbar</Navbar.Brand>
+          <Nav className="me-auto">
+            <Nav.Link to="home"   as={Link} >Home</Nav.Link>
+            <Nav.Link to="about"   as={Link} >About</Nav.Link>
+            <Nav.Link to="insert"   as={Link} >Insert</Nav.Link>
+            <Nav.Link to="display"   as={Link} >Display</Nav.Link>
+            <Nav.Link to="update"   as={Link} >Update</Nav.Link>
+            <Nav.Link to="search"   as={Link} >Search</Nav.Link>
+           </Nav>
+
+        </Container>
+      </Navbar>
+        
+        <br size="4" color="red"></br>
+        <Outlet></Outlet>
+         
+        </>
+    )
+}
+export default Layout;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// import { Link, Outlet } from "react-router-dom";
+// import Container from 'react-bootstrap/Container';
+// import Nav from 'react-bootstrap/Nav';
+// import Navbar from 'react-bootstrap/Navbar';
+
+
+// const Layout=()=>{
+//    return(
+//     <>
+//      <Navbar bg="dark" data-bs-theme="dark">
+//         <Container>
+//           <Navbar.Brand href="#home">Navbar</Navbar.Brand>
+//           <Nav className="me-auto">
+//             <Nav.Link as={Link} to="home" >Home</Nav.Link>
+//             <Nav.Link as={Link} to="about" >About</Nav.Link>
+//             <Nav.Link as={Link} to="contact">Contact</Nav.Link>
+//             <Nav.Link as={Link} to="insert">Insert</Nav.Link>
+//             <Nav.Link as={Link} to="display">Display</Nav.Link>
+//             <Nav.Link as={Link} to="update">Update</Nav.Link>
+//             <Nav.Link as={Link} to="search">Search</Nav.Link>
+//           </Nav>
+//         </Container>
+//       </Navbar>
+//       <br />
+   
+        
+//         <div>
+//             <Outlet></Outlet>
+//         </div>
+//         <hr size="4"></hr>
+//         wesdfedfssssssssssssssssssss
+    
+//     </>
+//    )
+// }
+// export default Layout;
+
+==========================
+Main.jsx
+
+import React from 'react'
+import ReactDOM from 'react-dom/client'
+import App from './App.jsx'
+import 'bootstrap/dist/css/bootstrap.min.css';
+import "./App.css"
+ReactDOM.createRoot(document.getElementById('root')).render(
+  
+    <App />
+ 
+)
+
+==================================
+App.css
+
+table, th, td {
+    border: 1px solid rgb(209, 71, 71);
+  }
+
+======================================
+Home.jsx
+
+
+const Home=()=>{
+    return(
+        <>
+        <h1>THis is a Home</h1>
+        </>
+    )
+}
+export default Home;
+
+
+
+
+
+
+
+
+
+// const Home=()=>{
+//     return(
+//         <>
+//         <h1>this is HOme</h1>
+//         </>
+//     )
+// }
+// export default Home;
+
+
+===================================
+Home.jsx
+
+
+
+const About=()=>{
+    return(
+        <>
+          <h1>This is About</h1>
+        </>
+    )
+}
+export default About;
+
+
+
+// const About=()=>{
+//     return(
+//         <>
+//         <h1>this is A About Page</h1>
+//         </>
+//     )
+// }
+// export default About;
+
+===========================================
+Display.jsx
+
+
+/*
+
+import axios from "axios";
+import { useEffect, useState } from "react";
+
+const Display=()=>{
+    const [mydata,setmydata] = useState([])
+    const loadData=()=>{
+        const url = `http://localhost:3000/student`;
+        axios.get(url).then((res)=>{
+            setmydata(res.data);
+          
+        })
+    }
+    useEffect(()=>{
+         loadData();
+    },[])
+
+    const ans = mydata.map((key)=>{
+        return(
+            <>
+              
+                <tr>
+                <td>{key.id}</td>
+                    <td>{key.rollno}</td>
+                    <td>{key.name}</td>
+                    <td>{key.city}</td>
+                    <td>{key.fees}</td>
+                </tr>
+             
+            </>
+        )
+    })
+    return(
+        <>
+          <table >
+            <tr >
+            <td  border="solid">ID</td>
+               <td  border="solid">Rollno</td>
+               <td >Name</td>
+               <td>City</td>
+               <td>Fees</td>
+            </tr>
+            {ans}
+          </table>
+        </>
+    )
+}
+export default Display;
+
+*/
+
+=============================================
+Search.jsx
+
+
+// import axios from "axios";
+// import { useState } from "react";
+
+// const Search=()=>{
+//     const [id,setid] = useState("");
+//     const [mydata, setmydata] = useState([]);
+
+//     const handleSubmit=()=>{
+//         const url = `http://localhost:3000/student/?id=${id}`;
+//        axios.get(url).then((res)=>{
+//             setmydata(res.data)
+//         })
+//     }
+//     const ans = mydata.map((key)=>{
+//         return(
+//             <>
+//              <h3>{key.id}</h3>
+//                <h3>{key.rollno}</h3>
+//                <h3>{key.name}</h3>
+//                <h3>{key.city}</h3>
+//                <h3>{key.fees}</h3>
+//             </>
+//         )
+//     })
+//     return(
+//         <>
+//         <input type="text" onChange={(e)=>{setid(e.target.value)}}></input>
+//         <button onClick={handleSubmit}> Search</button>
+//           {ans}
+//         </>
+
+//     )
+// }
+// export default Search;
+
+=================================================
+ReacEdit.jsx
+
+
+// import { useState,useEffect } from "react";
+// import { useParams } from "react-router-dom";
+// import axios from "axios";
+// const RecEdit=()=>{
+//       const {id} = useParams();
+
+//       const [mydata ,setmydata]= useState({});
+
+//       const loaddata=()=>{
+//         let url = `http://localhost:3000/student/${id}`;
+//         axios.get(url).then((res)=>{
+//             setmydata(res.data);
+//         })
+//       }
+
+//       useEffect(()=>{
+//          loaddata();
+//       },[])
+//     const handleinput=(e)=>{
+//      let name =e.target.name;
+//      let value = e.target.value;
+//      setmydata(values=>({...values,[name]:value}));
+//     }
+//     const Saveup=()=>{
+//         let url = `http://localhost:3000/student/${id}`;
+//         axios.put(url,mydata).then((res)=>{
+//             alert("Data Succesfully Updated");
+//         })
+//     }
+//     return(
+//         <>
+//          <h1>THis is in Edit Box</h1>
+//           <br></br>
+//           Enter ID: <input type="text" name="id" onChange={handleinput}></input>
+//           <br></br>
+//           Enter Rollno: <input type="text" name="rollno" onChange={handleinput}></input>
+//           <br></br>
+//           Enter Name: <input type="text" name="name" onChange={handleinput}></input>
+//           <br></br>
+//           Enter City: <input type="text" name="city" onChange={handleinput}></input>
+//           <br></br>
+//           Enter Fees: <input type="text" name="fees" onChange={handleinput}></input>
+//           <br></br>
+//           <button onClick={Saveup}>Update Now!</button>
+//         </>
+//     )
+// }
+// export default RecEdit;
+
+=======================================
+Update.jsx
+
+
+
+
+// import { useState,useEffect } from "react";
+// import axios from "axios";
+
+// import { useNavigate } from "react-router-dom";
+// const Update=()=>{
+//     const [mydata,setmydata] = useState([])
+//      const navigate = useNavigate();
+//     const loaddata=()=>{
+//         let url = "http://localhost:3000/student";
+//         axios.get(url).then((res)=>{
+//             setmydata(res.data);
+//         })
+//     }
+//     useEffect(()=>{
+//        loaddata();
+//     },[]);
+
+//    const delrec=(id)=>{
+//       let url = `http://localhost:3000/student/${id}`;
+//       axios.delete(url).then((res)=>{
+//         alert("Data Succesfully Deleted");
+//         loaddata();
+//       })
+//    }
+//    const updaterec=(id)=>{
+//       navigate("/myedit/"+id)
+//    }
+
+//     const ans = mydata.map((key)=>{
+//         return(
+//             <>
+//             <tr>
+//                 <td>{key.id}</td>
+//                 <td>{key.rollno}</td>
+//                 <td>{key.name}</td>
+//                 <td>{key.city}</td>
+//                 <td>{key.fees}</td>
+//                 <td>
+//                     <a href="#" onClick={()=>{updaterec(key.id)}}>
+//                     Edit</a>
+//                 </td>
+//                 <td>
+//                     <a href="#" onClick={()=>{delrec(key.id)}}>
+//                    Delete</a>
+//                 </td>
+//            </tr>
+//             </>
+//         )
+//     })
+
+//     return(
+//       <>
+//       <table border="2">
+//         <tr>
+//             <th></th>
+//             <th>User id</th>
+//             <th>Roll No</th>
+//             <th>Name</th>
+//             <th>City</th>
+//             <th>Fees</th>
+//         </tr>
+//         {ans}
+//       </table>
+//       </>
+//     )
+// }
+// export default Update;
+
+===============================
+// const Contact=()=>{
+//     return(
+//         <>
+        
+//         </>
+//     )
+// }
+// export default Contact;
+
+
+===========================================
+import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
+
+const Insert=()=>{
+    return(
+        <>
+         <Form>
+      <Form.Group className="mb-3" controlId="formBasicEmail">
+        <Form.Label>ID</Form.Label>
+        <Form.Control type="id" placeholder="Enter email" />
+        
+      </Form.Group>
+      <Form.Group className="mb-3" controlId="formBasicEmail">
+        <Form.Label>Roll No</Form.Label>
+        <Form.Control type="rollno" placeholder="Enter email" />
+        
+      </Form.Group>
+      <Form.Group className="mb-3" controlId="formBasicEmail">
+        <Form.Label>name</Form.Label>
+        <Form.Control type="name" placeholder="Enter email" />
+        
+      </Form.Group>
+
+
+      <Form.Group className="mb-3" controlId="formBasicPassword">
+        <Form.Label>City</Form.Label>
+        <Form.Control type="city" placeholder="Password" />
+      </Form.Group>
+      <Form.Group className="mb-3" controlId="formBasicPassword">
+        <Form.Label>Fees</Form.Label>
+        <Form.Control type="fees" placeholder="Password" />
+      </Form.Group>
+      <Form.Group className="mb-3" controlId="formBasicCheckbox">
+        <Form.Check type="checkbox" label="Check me out" />
+      </Form.Group>
+      <Button variant="primary" type="submit">
+        Submit
+      </Button>
+    </Form>
+        </>
+    )
+}
+
+export default Insert;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// import axios from 'axios';
+// import { useState } from 'react';
+// import Button from 'react-bootstrap/Button';
+// import Form from 'react-bootstrap/Form';
+
+// const Insert=()=>{
+//       const [input ,setinput] = useState({})
+
+//       const handleInput=(e)=>{
+//         const name = e.target.name;
+//         const value = e.target.value;
+//         setinput((values)=>({...values,[name]:value}))
+//         console.log(input);
+//       }
+//       const handleSubmit=()=>{
+//         const api =`http://localhost:3000/student`
+//         axios.post(api,input).then((res)=>{
+//             console.log(res);
+//             alert("Data Saved")
+//         })
+//       }
+//     return(
+//         <>
+//            <Form>
+//            <Form.Group className="mb-3" controlId="formBasicPassword">
+//         <Form.Label>ID</Form.Label>
+//         <Form.Control type="text" placeholder="Password"  name="id" value={input.id} onChange={handleInput}/>
+//       </Form.Group>
+//       <Form.Group className="mb-3" controlId="formBasicEmail">
+//         <Form.Label>Roll Number </Form.Label>
+//         <Form.Control type="text" placeholder="Enter roolll ni" name="rollno" value={input.rollno} onChange={handleInput} />
+       
+//       </Form.Group>
+
+//       <Form.Group className="mb-3" controlId="formBasicPassword">
+//         <Form.Label>Name</Form.Label>
+//         <Form.Control type="text" placeholder="Password"  name="name" value={input.name} onChange={handleInput}/>
+//       </Form.Group>
+//       <Form.Group className="mb-3" controlId="formBasicEmail">
+//         <Form.Label>City</Form.Label>
+//         <Form.Control type="text" placeholder="Enter email" name="city" value={input.city} onChange={handleInput} />
+       
+//       </Form.Group>
+
+//       <Form.Group className="mb-3" controlId="formBasicPassword">
+//         <Form.Label>Fees</Form.Label>
+//         <Form.Control type="text" placeholder="Password" name="fees" value={input.fees} onChange={handleInput} />
+//       </Form.Group>
+//       <Form.Group className="mb-3" controlId="formBasicCheckbox">
+//         <Form.Check type="checkbox" label="Check me out" />
+//       </Form.Group>
+//       <Button variant="primary" type="submit" onClick={handleSubmit}>
+//         Submit
+//       </Button>
+//     </Form>
+//         </>
+//     )
+// }
+// export default Insert;
